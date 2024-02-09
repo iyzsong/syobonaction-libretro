@@ -19,3 +19,8 @@ Thanks.
 ## How to Build
 
 First run `./update-deps.sh` to update `deps`, then use cmake.
+
+
+## How to Run
+
+First copy `BGM`, `SE` and `res` directories from `deps/OpenSyobonAction` into `SyobonAction` under the system directory of RetroArch, eg: `~/.config/retroarch/system/SyobonAction`. Then just launch the core in RetroArch.
