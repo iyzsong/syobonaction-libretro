@@ -1,0 +1,1 @@
+../../sdl-libretro/SDL_image.h

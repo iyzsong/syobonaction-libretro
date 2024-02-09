@@ -33,7 +33,7 @@
 
 /* Enable various drivers */
 #define SDL_AUDIO_DRIVER_DUMMY 1
-#define SDL_CDROM_DRIVER_DUMMY 1
+#define SDL_CDROM_DUMMY 1
 #define SDL_JOYSTICK_DUMMY 1
 #define SDL_LOADSO_DISABLED 1
 #define SDL_THREAD_PTHREAD 1
