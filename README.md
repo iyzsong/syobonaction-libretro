@@ -14,3 +14,8 @@ This project is based on:
 - libretro-common: https://github.com/libretro/libretro-common
 
 Thanks.
+
+
+## How to Build
+
+First run `./update-deps.sh` to update `deps`, then use cmake.
