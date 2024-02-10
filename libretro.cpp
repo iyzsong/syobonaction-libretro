@@ -125,9 +125,7 @@ void retro_init(void)
 static void game_main(void)
 {
     osa_main(0, NULL);
-    printf("GAME END\n");
-    while (true)
-        sleep(10);
+    co_switch(retro_ct);
 }
 
 bool retro_load_game(const struct retro_game_info *game)
@@ -189,7 +187,10 @@ bool retro_load_game_special(unsigned game_type, const struct retro_game_info *i
 
 void retro_unload_game(void)
 {
-    SDL_Quit();
+    maint = 3;
+    co_switch(game_ct);
+    deinit();
+    co_delete(game_ct);
 }
 
 unsigned retro_get_region(void)
