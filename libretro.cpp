@@ -138,6 +138,7 @@ bool retro_load_game(const struct retro_game_info *game)
 
     fill_pathname_join_special(game_dir, system_dir, "SyobonAction", 512);
     if (!path_is_directory(game_dir) || chdir(game_dir) == -1) {
+        log_cb(RETRO_LOG_ERROR, "Missing game assets directory: %s\n", game_dir);
         return false;
     }
     game_ct = co_create(1024*1024, game_main);
