@@ -24,7 +24,7 @@ static void PumpKeyboardEvents(void)
         [RETRO_DEVICE_ID_JOYPAD_LEFT]   = SDLK_LEFT,
         [RETRO_DEVICE_ID_JOYPAD_RIGHT]  = SDLK_RIGHT,
         [RETRO_DEVICE_ID_JOYPAD_A]      = SDLK_z,
-        [RETRO_DEVICE_ID_JOYPAD_B]      = SDLK_SPACE,
+        [RETRO_DEVICE_ID_JOYPAD_B]      = SDLK_z,
         [RETRO_DEVICE_ID_JOYPAD_X]      = SDLK_o,
         [RETRO_DEVICE_ID_JOYPAD_Y]      = SDLK_RETURN,
         [RETRO_DEVICE_ID_JOYPAD_SELECT] = SDLK_F1,
