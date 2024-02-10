@@ -50,13 +50,6 @@ static void PumpKeyboardEvents(void)
 
 void DUMMY_PumpEvents(_THIS)
 {
-    static Uint32 t = 0;
-    if (SDL_GetTicks() - t < 10) {
-        SDL_Delay(10);
-        return;
-    }
-    t = SDL_GetTicks();
-    SDL_libretro_co_yield();
     PumpKeyboardEvents();
 }
 

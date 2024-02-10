@@ -4,6 +4,10 @@
 #include <file/file_path.h>
 
 #define main osa_main
+#define SDL_Flip(screen) SDL_libretro_co_yield()
+#define SDL_Delay(i)
+#define WaitKey _WaitKey
+
 #include <OpenSyobonAction/main.cpp>
 
 retro_audio_sample_batch_t SDL_libretro_audio_batch_cb;
@@ -24,6 +28,18 @@ static void fallback_log(enum retro_log_level level, const char *fmt, ...)
     va_start(va, fmt);
     vfprintf(stderr, fmt, va);
     va_end(va);
+}
+
+byte _WaitKey()
+{
+    SDL_Event event;
+    while (true) {
+        SDL_libretro_co_yield();
+	while (SDL_PollEvent(&event)) {
+	    if (event.type == SDL_KEYDOWN)
+		return event.key.keysym.sym;
+        }
+    }
 }
 
 void SDL_libretro_co_yield(void)
